@@ -34,7 +34,7 @@ __Run the server__
 coffee server.coffee
 ```
 
-__Open a browser tab(s) to http://localhost:3000 __
+__Open a browser tab(s) to [http://localhost:3000](http://localhost:3000)__
 
 You may choose the port if you would like, which is defined in `server.coffee`
 
