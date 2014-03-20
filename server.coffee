@@ -19,6 +19,7 @@ oscServer = new osc.Server(OSC_SERVER_PORT, IP_ADDRESS)
 server.listen 3000
 
 app.set 'view engine', 'jade'
+app.engine('jade', require('jade').__express)
 app.get "/", (req, res) ->
   res.render __dirname + "/index"
 
