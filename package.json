@@ -1,0 +1,12 @@
+{
+  "name": "send-a-message",
+  "description": "The Send A Message sound installation",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "latest",
+    "socket.io": "latest",
+    "node-osc": "latest",
+    "coffee-script": "latest"
+  }
+}

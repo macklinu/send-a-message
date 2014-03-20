@@ -1,0 +1,8 @@
+script(src="/socket.io/socket.io.js")
+script
+  :coffee
+    socket = io.connect 'http://localhost'
+    socket.on 'number', (data) ->
+      document.getElementById('data').innerHTML = data.number
+      socket.emit 'send message', "the browser received the number: #{data.number}"
+#data
