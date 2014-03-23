@@ -5,7 +5,7 @@ module.exports = (grunt) ->
       server:
         cmd: 'coffee ./server.coffee & open "http://localhost:3000" & wait'
     coffeelint:
-      app: 'server.coffee'
+      app: 'app/*.coffee'
 
   grunt.loadNpmTasks 'grunt-exec'
   grunt.loadNpmTasks 'grunt-coffeelint'
