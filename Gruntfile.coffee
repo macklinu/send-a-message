@@ -3,7 +3,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON 'package.json'
     exec:
       server:
-        cmd: 'coffee ./server.coffee & open "http://localhost:3000" & wait'
+        cmd: 'coffee app/server.coffee & open "http://localhost:3000" & wait'
     coffeelint:
       app: 'app/*.coffee'
 
@@ -11,3 +11,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-coffeelint'
 
   grunt.registerTask 'default', ['coffeelint']
+  grunt.registerTask 'server', ['exec:server']
