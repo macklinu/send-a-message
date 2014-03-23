@@ -9,5 +9,8 @@
     "socket.io": "latest",
     "node-osc": "latest",
     "coffee-script": "latest"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2"
   }
 }
