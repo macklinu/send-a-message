@@ -1,0 +1,153 @@
+$main-color = #47a3da
+
+/* General grid styles */
+.cbp-ig-grid {
+	list-style: none;
+	margin: 0 auto
+}
+
+/* grid item */
+.cbp-ig-grid li {
+	width: 33%;
+	float: left;
+	height: 200px;
+	text-align: center;
+	border-top: 1px solid #ddd;
+	background-color: #fff
+	margin: 1px
+}
+
+.cbp-ig-grid li:hover {
+	background-color: $main-color
+	-webkit-transition: background-color 200ms linear;
+    -moz-transition: background-color 200ms linear;
+    -o-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+/* we are using a combination of borders and box shadows to control the grid lines */
+.cbp-ig-grid li:nth-child(-n+3){
+	border-top: none;
+}
+
+.cbp-ig-grid li:nth-child(3n-1),
+.cbp-ig-grid li:nth-child(3n-2) {
+	box-shadow: 1px 0 0 #ddd;
+}
+
+/* anchor style */
+.cbp-ig-grid li > a {
+	display: block;
+	height: 100%;
+	color: #47a3da;
+	-webkit-transition: background 0.2s;
+	-moz-transition: background 0.2s;
+	transition: background 0.2s;
+}
+
+/* title element */
+.cbp-ig-grid .cbp-ig-title {
+	margin: 20px 0 10px 0;
+	padding: 20px 0 0 0;
+	font-size: 2em;
+	position: relative;
+	-webkit-transition: -webkit-transform 0.2s;
+	-moz-transition: -moz-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+
+.cbp-ig-grid .cbp-ig-category {
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 1em;
+	letter-spacing: 1px;
+	color: #fff;
+	-webkit-transform: translateY(10px);
+	-moz-transform: -moz-translateY(10px);
+	-ms-transform: -ms-translateY(10px);
+	transform: translateY(10px);
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	-webkit-transition: transform 0.3s, opacity 0.2s;
+}
+
+.cbp-ig-grid li:hover .cbp-ig-category,
+.touch .cbp-ig-grid li .cbp-ig-category {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+/* Hover styles */
+
+.cbp-ig-grid li > a:hover {
+	//background: #47a3da;
+}
+
+.cbp-ig-grid li > a:hover .cbp-ig-title {
+	color: #fff;
+}
+
+.cbp-ig-grid li > a:hover .cbp-ig-title {
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+@media screen and (max-width: 62.75em) {
+	.cbp-ig-grid li {
+		width: 50%;
+	}
+
+	/* reset the grid lines */
+	.cbp-ig-grid li:nth-child(-n+3){
+		border-top: 1px solid #ddd;
+	}
+
+	.cbp-ig-grid li:nth-child(3n-1),
+	.cbp-ig-grid li:nth-child(3n-2) {
+		box-shadow: none;
+	}
+
+	.cbp-ig-grid li:nth-child(-n+2){
+		border-top: none;
+	}
+
+	.cbp-ig-grid li:nth-child(2n-1) {
+		box-shadow: 1px 0 0 #ddd;
+	}
+}
+
+@media screen and (max-width: 41.6em) {
+	.cbp-ig-grid li {
+		width: 100%;
+	}
+
+	.cbp-ig-grid li:nth-child(-n+2){
+		border-top: 1px solid #ddd;
+	}
+
+	.cbp-ig-grid li:nth-child(2n-1) {
+		box-shadow: none
+	}
+
+	.cbp-ig-grid li:first-child {
+		border-top: none;
+	}
+}
+
+@media screen and (max-width: 25em) {
+	.cbp-ig-grid {
+		font-size: 80%;
+	}
+
+	.cbp-ig-grid .cbp-ig-category {
+		margin-top: 20px;
+	}
+}

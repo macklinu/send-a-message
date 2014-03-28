@@ -4,21 +4,15 @@
 //if IE 8 ]><html class="ie ie8" lang="en">
 // [if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]
 head
-  meta(charset='utf-8')
-  title Send A Message
-  meta(name='description', content='')
-  meta(name='author', content='')
-  // Mobile Specific
-  meta(name="viewport", content="width=device-width, initial-scale=1.0")
-
-  // CSS
-  != css('app')
+  block head
+    meta(charset='utf-8')
+    title Send A Message
+    meta(name='description', content='')
+    meta(name='author', content='')
+    // Mobile Specific
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
 body
   block content
-
-  != js('//d3js.org/d3.v3.min.js')
-  != js('//d3js.org/topojson.v1.min.js')
-  != js('visualization')
 
 | </html>

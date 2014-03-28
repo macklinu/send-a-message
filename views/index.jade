@@ -1,2 +1,7 @@
 extends layout
+block append head
+  != css('app')
 block content
+  != js('//d3js.org/d3.v3.min.js')
+  != js('//d3js.org/topojson.v1.min.js')
+  != js('visualization')
