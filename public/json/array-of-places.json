@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Ann Arbor",
+    "id": "ann-arbor",
+    "location": {
+      "latitude": 42.291173,
+      "longitude": -83.716090
+    }
+  },
+  {
+    "name": "Berlin",
+    "id": "berlin",
+    "location": {
+      "latitude": 52.5274446,
+      "longitude": 13.4030133
+    }
+  },
+  {
+    "name": "Athens",
+    "id": "athens",
+    "location": {
+      "latitude": 37.989842,
+      "longitude": 23.732406
+    }
+  },
+  {
+    "name": "Portland",
+    "id": "portland",
+    "location": {
+      "latitude": 45.511454,
+      "longitude": -122.6556955
+    }
+  },
+  {
+    "name": "London",
+    "id": "london",
+    "location": {
+      "latitude": 51.473629,
+      "longitude": -0.038005
+    }
+  },
+  {
+    "name": "Fredrikstan",
+    "id": "fredrikstan",
+    "location": {
+      "latitude": 59.1969348,
+      "longitude": 10.9517845
+    }
+  },
+  {
+    "name": "Belfast",
+    "id": "belfast",
+    "location": {
+      "latitude": 54.587731,
+      "longitude": -5.935482
+    }
+  },
+  {
+    "name": "Detroit",
+    "id": "detroit",
+    "location": {
+      "latitude": 42.335416,
+      "longitude": -83.049161
+    }
+  },
+  {
+    "name": "Boston",
+    "id": "boston",
+    "location": {
+      "latitude": 42.337368,
+      "longitude": -71.099299
+    }
+  }
+]
