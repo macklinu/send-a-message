@@ -3,28 +3,20 @@ stylus = require 'stylus'
 assets = require 'connect-assets'
 mongoose = require 'mongoose'
 restify = require 'express-restify-mongoose'
+autoIncrement = require 'mongoose-auto-increment'
 models = require './models'
 
 #### Basic application initialization
 # Create app instance.
 app = express()
 
-
 # Define Port
 app.port = process.env.PORT or process.env.VMC_APP_PORT or 3000
-
 
 # Config module exports has `setEnvironment` function that sets app settings depending on environment.
 config = require "./config"
 app.configure 'production', 'development', 'testing', ->
   config.setEnvironment app.settings.env
-
-db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
-# mongoose.connect db_config
-if app.settings.env != 'production'
-  mongoose.connect 'mongodb://localhost/example'
-else
-  console.log('If you are running in production, you may want to modify the mongoose connect path')
 
 #### View initialization
 # Add Connect Assets.
@@ -45,12 +37,6 @@ app.set 'view engine', 'jade'
 # [Body parser middleware](http://www.senchalabs.org/connect/middleware-bodyParser.html) parses JSON or XML bodies into `req.body` object
 app.use express.urlencoded()
 app.use express.json()
-
-
-#### Finalization
-# Initialize routes
-# routes = require './routes'
-# routes(app)
 
 app.configure () ->
   restify.serve app, models.User, lowercase: true
