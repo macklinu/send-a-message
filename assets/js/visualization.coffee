@@ -31,7 +31,6 @@ drag = d3.behavior.drag()
       if m0
         m1 = [d3.event.sourceEvent.pageX, d3.event.sourceEvent.pageY]
         o1 = [o0[0] + (m0[0] - m1[0]) / 4, o0[1] + (m1[1] - m0[1]) / 4]
-        console.log [-o1[0], -o1[1]]
         projection.rotate [-o1[0], -o1[1]]
 
       # Update the map
@@ -73,12 +72,12 @@ d3.json 'json/plate0.json', (error, plates) ->
       .attr 'class', 'land'
       .attr 'd', path
 
-d3.json 'json/array-of-places.json', (error, data) ->
+d3.json '../api/v1/cities', (error, data) ->
   console.error error if error
   console.log data
   awesomeData = data
   param = if query.city then query.city else ''
-  city = _.where awesomeData, id: param
+  city = _.where awesomeData, placeId: param
   plotCoordinates(if city[0] then city[0] else awesomeData[0])
 
 plotCoordinates = (cityObj) ->
@@ -110,7 +109,7 @@ plotCoordinates = (cityObj) ->
             .style 'fill', '#551111'
 
 getCoords = (d) ->
-  [d.location.longitude, d.location.latitude]
+  [d.location.lng, d.location.lat]
 
 getProjection = (d) ->
   projection getCoords d

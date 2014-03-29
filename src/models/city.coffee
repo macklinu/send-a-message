@@ -1,13 +1,16 @@
-mongoose = require 'mongoose'
+mongoose = require '../libs/mongoose'
+autoIncrement = require 'mongoose-auto-increment'
 
 # Post model
 City = new mongoose.Schema(
   name: String
-  id: String
   country: String
+  placeId: String
   location:
     lat: Number
     lng: Number
 )
+
+City.plugin autoIncrement.plugin, 'City'
 
 module.exports = mongoose.model 'City', City

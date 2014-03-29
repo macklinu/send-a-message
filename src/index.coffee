@@ -40,7 +40,10 @@ app.use express.json()
 
 app.configure () ->
   restify.serve app, models.User, lowercase: true
+  restify.serve app, models.City, lowercase: true
 
+routes = require './routes'
+routes(app)
 
 # Export application object
 module.exports = app

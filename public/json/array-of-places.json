@@ -2,74 +2,82 @@
   {
     "name": "Ann Arbor",
     "country": "USA",
-    "id": "annarbor",
+    "placeId": "annarbor",
     "location": {
-      "latitude": 42.291173,
-      "longitude": -83.716090
+      "lat": 42.291173,
+      "lng": -83.716090
     }
   },
   {
     "name": "Berlin",
-    "id": "berlin",
+    "country": "Germany",
+    "placeId": "berlin",
     "location": {
-      "latitude": 52.5274446,
-      "longitude": 13.4030133
+      "lat": 52.5274446,
+      "lng": 13.4030133
     }
   },
   {
     "name": "Athens",
-    "id": "athens",
+    "country": "Greece",
+    "placeId": "athens",
     "location": {
-      "latitude": 37.989842,
-      "longitude": 23.732406
+      "lat": 37.989842,
+      "lng": 23.732406
     }
   },
   {
     "name": "Portland",
-    "id": "portland",
+    "country": "USA",
+    "placeId": "portland",
     "location": {
-      "latitude": 45.511454,
-      "longitude": -122.6556955
+      "lat": 45.511454,
+      "lng": -122.6556955
     }
   },
   {
     "name": "London",
-    "id": "london",
+    "country": "England",
+    "placeId": "london",
     "location": {
-      "latitude": 51.473629,
-      "longitude": -0.038005
+      "lat": 51.473629,
+      "lng": -0.038005
     }
   },
   {
     "name": "Fredrikstan",
-    "id": "fredrikstan",
+    "country": "Norway",
+    "placeId": "fredrikstan",
     "location": {
-      "latitude": 59.1969348,
-      "longitude": 10.9517845
+      "lat": 59.1969348,
+      "lng": 10.9517845
     }
   },
   {
     "name": "Belfast",
-    "id": "belfast",
+    "country": "Ireland",
+    "placeId": "belfast",
     "location": {
-      "latitude": 54.587731,
-      "longitude": -5.935482
+      "lat": 54.587731,
+      "lng": -5.935482
     }
   },
   {
     "name": "Detroit",
-    "id": "detroit",
+    "country": "USA",
+    "placeId": "detroit",
     "location": {
-      "latitude": 42.335416,
-      "longitude": -83.049161
+      "lat": 42.335416,
+      "lng": -83.049161
     }
   },
   {
     "name": "Boston",
-    "id": "boston",
+    "country": "USA",
+    "placeId": "boston",
     "location": {
-      "latitude": 42.337368,
-      "longitude": -71.099299
+      "lat": 42.337368,
+      "lng": -71.099299
     }
   }
 ]

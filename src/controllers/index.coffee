@@ -1,4 +1,7 @@
 # Just renders index.jade
 
+City = require('../models').City
+
 exports.index = (req, res) ->
-  res.render 'launch'
+  City.find (err, cities) ->
+    res.render 'launch', cities: cities
