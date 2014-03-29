@@ -1,12 +1,12 @@
 mongoose = require 'mongoose'
 autoIncrement = require 'mongoose-auto-increment'
 
-###
-db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
-mongoose.connect db_config
-###
 
-mongoose.connect 'mongodb://localhost/example'
+dbUri = process.env.MONGOLAB_URI or
+  process.env.MONGOHQ_URL or
+  'mongodb://localhost/example'
+mongoose.connect dbUri
+
 autoIncrement.initialize mongoose
 
 module.exports = mongoose
