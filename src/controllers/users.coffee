@@ -13,6 +13,7 @@ module.exports =
     user = new User req.body
     user.save (err, user) ->
       if not err
+        console.log user
         res.send user
         res.statusCode = 201
       else
@@ -23,6 +24,7 @@ module.exports =
   get: (req, res) ->
     User.findById req.params.id, (err, user) ->
       if not err
+        console.log user
         res.send user
       else
         res.send err

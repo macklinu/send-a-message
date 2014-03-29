@@ -1,4 +1,4 @@
-module.exports = 
+module.exports =
 
 	# Lists all posts
 	index: (req, res) ->
@@ -13,5 +13,3 @@ module.exports =
 	destroy: (req, res) ->
 		delete req.session.authorized
 		res.redirect '/private'
-			
-		

@@ -77,10 +77,12 @@ d3.json 'json/array-of-places.json', (error, data) ->
   console.error error if error
   console.log data
   awesomeData = data
-  plotCoordinates()
+  param = if query.city then query.city else ''
+  city = _.where awesomeData, id: param
+  plotCoordinates(if city[0] then city[0] else awesomeData[0])
 
-plotCoordinates = () ->
-  coords = getCoords awesomeData[5]
+plotCoordinates = (cityObj) ->
+  coords = getCoords cityObj
 
   projection
       .rotate [-coords[0], 0]

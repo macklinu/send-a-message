@@ -1,7 +1,8 @@
 [
   {
     "name": "Ann Arbor",
-    "id": "ann-arbor",
+    "country": "USA",
+    "id": "annarbor",
     "location": {
       "latitude": 42.291173,
       "longitude": -83.716090

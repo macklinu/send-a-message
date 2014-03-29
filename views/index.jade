@@ -2,6 +2,9 @@ extends layout
 block append head
   != css('app')
 block content
+  script(type='text/javascript').
+    var query = !{JSON.stringify(query)};
   != js('//d3js.org/d3.v3.min.js')
   != js('//d3js.org/topojson.v1.min.js')
+  != js('//underscorejs.org/underscore-min.js')
   != js('visualization')
