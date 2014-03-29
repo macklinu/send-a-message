@@ -45,7 +45,6 @@ svg = d3.select 'body'
       .append 'svg'
       .attr 'width', width
       .attr 'height', height
-      .call drag
 
 svg.append 'defs'
     .append 'path'
