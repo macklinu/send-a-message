@@ -2,6 +2,8 @@ express = require 'express'
 stylus = require 'stylus'
 assets = require 'connect-assets'
 mongoose = require 'mongoose'
+restify = require 'express-restify-mongoose'
+models = require './models'
 
 #### Basic application initialization
 # Create app instance.
@@ -47,8 +49,11 @@ app.use express.json()
 
 #### Finalization
 # Initialize routes
-routes = require './routes'
-routes(app)
+# routes = require './routes'
+# routes(app)
+
+app.configure () ->
+  restify.serve app, models.User, lowercase: true
 
 
 # Export application object
