@@ -1,3 +1,2 @@
 exports.index = (req, res) ->
-  city = req.query
-  res.render 'index', query: city
+  res.render 'index', query: req.query
