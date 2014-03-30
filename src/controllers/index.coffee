@@ -1,7 +1,7 @@
-# Just renders index.jade
-
+_ = require 'underscore-node'
 City = require('../models').City
 
 exports.index = (req, res) ->
   City.find (err, cities) ->
-    res.render 'launch', cities: cities
+    sortedCities = _(cities).sortBy 'name'
+    res.render 'launch', cities: sortedCities
