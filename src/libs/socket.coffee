@@ -16,5 +16,6 @@ SocketServer::start = (app) ->
     .on 'connection', (socket) ->
       numConnections++
       console.log "Number of connections: #{numConnections}"
+      socket.emit 'berlin', data: 'world'
 
 module.exports = new SocketServer()

@@ -5,6 +5,7 @@ block append head
 block content
   script(type='text/javascript').
     var query = !{JSON.stringify(query)};
+    var allCities = !{JSON.stringify(allCities)};
   != js('//d3js.org/d3.v3.min.js')
   != js('//d3js.org/topojson.v1.min.js')
   != js('//underscorejs.org/underscore-min.js')
