@@ -1,9 +1,13 @@
 express = require 'express'
+http = require 'http'
 stylus = require 'stylus'
 assets = require 'connect-assets'
 mongoose = require 'mongoose'
 restify = require 'express-restify-mongoose'
 autoIncrement = require 'mongoose-auto-increment'
+
+socket = require './libs/socket'
+
 models = require './models'
 
 #### Basic application initialization
@@ -48,6 +52,10 @@ restifyOptions =
 
 routes = require './routes'
 routes(app)
+
+app.server = http.createServer app
+
+socket.start(app.server)
 
 # Export application object
 module.exports = app
