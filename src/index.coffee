@@ -39,8 +39,12 @@ app.use express.urlencoded()
 app.use express.json()
 
 app.configure () ->
-  restify.serve app, models.User, lowercase: true
-  restify.serve app, models.City, lowercase: true
+  restify.serve app, models.User, restifyOptions
+  restify.serve app, models.City, restifyOptions
+
+restifyOptions =
+  lowercase: true,
+  strict: true
 
 routes = require './routes'
 routes(app)
