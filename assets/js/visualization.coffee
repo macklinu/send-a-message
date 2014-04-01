@@ -92,7 +92,7 @@ plotCoordinates = (cityObj) ->
       .append 'circle'
       .attr 'cx', (d) -> getProjection(d)[0]
       .attr 'cy', (d) -> getProjection(d)[1]
-      .attr 'class', (d) -> d.id
+      .attr 'class', (d) -> d.placeId
       .attr 'r', 10
       .on 'click', (d) ->
         d3.select(this)
