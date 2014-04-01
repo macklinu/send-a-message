@@ -73,7 +73,6 @@ d3.json 'json/plate0.json', (error, plates) ->
 
 d3.json '../api/v1/cities', (error, data) ->
   console.error error if error
-  console.log data
   awesomeData = data
   param = if query.city then query.city else ''
   city = _.where awesomeData, placeId: param
@@ -92,7 +91,7 @@ plotCoordinates = (cityObj) ->
       .append 'circle'
       .attr 'cx', (d) -> getProjection(d)[0]
       .attr 'cy', (d) -> getProjection(d)[1]
-      .attr 'class', (d) -> d.placeId
+      .attr 'id', (d) -> d.placeId
       .attr 'r', 10
       .on 'click', (d) ->
         d3.select(this)
