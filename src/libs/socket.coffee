@@ -15,7 +15,7 @@ SocketServer::start = (app) ->
   numConnections = 0
 
   # constants
-  IP_ADDRESS = '127.0.0.1'
+  IP_ADDRESS = '23.21.132.4'
   OSC_SERVER_PORT = 3333
   OSC_CLIENT_PORT = 12345
 

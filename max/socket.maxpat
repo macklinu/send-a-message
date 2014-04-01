@@ -135,7 +135,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 197.0, 158.0, 43.0, 18.0 ],
-					"presentation_rect" : [ 197.0, 161.0, 0.0, 0.0 ],
 					"text" : "/berlin"
 				}
 
@@ -217,8 +216,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 75.0, 137.0, 20.0 ],
-					"text" : "udpsend localhost 3333"
+					"patching_rect" : [ 15.0, 75.0, 153.0, 20.0 ],
+					"text" : "udpsend 23.21.132.4 3333"
 				}
 
 			}
