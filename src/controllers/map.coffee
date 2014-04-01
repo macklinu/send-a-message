@@ -1,2 +1,8 @@
+City = require('../models').City
+
 exports.index = (req, res) ->
-  res.render 'index', query: req.query
+  City.find (err, cities) ->
+    obj =
+      query: req.query
+      allCities: cities
+    res.render 'index', obj
