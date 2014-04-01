@@ -6,8 +6,6 @@ mongoose = require 'mongoose'
 restify = require 'express-restify-mongoose'
 autoIncrement = require 'mongoose-auto-increment'
 
-socket = require './libs/socket'
-
 models = require './models'
 
 #### Basic application initialization
@@ -54,7 +52,7 @@ routes = require './routes'
 routes(app)
 
 app.server = http.createServer app
-
+socket = require './libs/socket'
 socket.start(app.server)
 
 # Export application object

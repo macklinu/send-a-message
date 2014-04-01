@@ -10,8 +10,8 @@ SocketServer = () ->
 
 util.inherits SocketServer, events.EventEmitter
 
-SocketServer::start = (app) ->
-  io = io.listen app
+SocketServer::start = (@app) ->
+  @io = io.listen @app
   numConnections = 0
 
   # constants
@@ -33,11 +33,16 @@ SocketServer::start = (app) ->
   City.find (err, data) ->
     cities = data
 
-  io.of '/map'
+  @io.of '/map'
     .on 'connection', (socket) ->
       console.log cities
       numConnections++
       console.log "Number of connections: #{numConnections}"
       setup socket, city for city in cities
+
+  SocketServer::callAnnArbor = () ->
+    @io.of '/map'
+      .emit 'annarbor'
+
 
 module.exports = new SocketServer()

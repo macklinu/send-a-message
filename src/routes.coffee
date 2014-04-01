@@ -4,6 +4,8 @@
 # GET, POST, PUT, DELETE methods are going to the same controller methods
 # We are using method names to determine controller actions for clearness.
 
+socket = require './libs/socket'
+
 module.exports = (app) ->
 
   # simple session authorization
@@ -16,6 +18,13 @@ module.exports = (app) ->
 
   app.get '/', (req, res, next) ->
     routeMvc('index', 'index', req, res, next)
+
+  app.post '/max/annarbor', (req, res, next) ->
+    console.log '/max/annarbor'
+    socket.callAnnArbor()
+    res.statusCode = 200
+    res.type 'application/json'
+    res.json status: 'ok'
 
   app.all '/:controller', (req, res, next) ->
     routeMvc(req.params.controller, 'index', req, res, next)
