@@ -6,6 +6,7 @@ City = new mongoose.Schema(
   name: String
   country: String
   placeId: String
+  timezone: String
   location:
     lat: Number
     lng: Number

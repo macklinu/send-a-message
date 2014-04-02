@@ -1,3 +1,5 @@
-$ ->
-  x = -> $('<h2>Express Coffee Template 1.4</h2>').prependTo('.right')
-  setTimeout x, 500
+window.onload = () ->
+  time = new Time query
+  time.update()
+
+  setInterval (() -> time.update()), 1000
