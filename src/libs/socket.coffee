@@ -40,9 +40,9 @@ SocketServer::start = (@app) ->
       console.log "Number of connections: #{numConnections}"
       setup socket, city for city in cities
 
-  SocketServer::callAnnArbor = () ->
-    @io.of '/map'
-      .emit 'annarbor'
+SocketServer::callCity = (city) ->
+  @io.of '/map'
+    .emit city
 
 
 module.exports = new SocketServer()
