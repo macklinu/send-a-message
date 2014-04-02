@@ -37,7 +37,6 @@ module.exports = (app) ->
   for city in cities
     do (city) ->
       app.post "/max/#{city}", (req, res, next) ->
-        console.log city
         socket.callCity city
         res.statusCode = 200
         res.type 'application/json'
