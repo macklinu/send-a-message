@@ -4,7 +4,21 @@
 # GET, POST, PUT, DELETE methods are going to the same controller methods
 # We are using method names to determine controller actions for clearness.
 
+socket = require './libs/socket'
+
 module.exports = (app) ->
+
+  cities = [
+    'annarbor',
+    'berlin',
+    'athens',
+    'portland',
+    'london',
+    'fredrikstan',
+    'belfast',
+    'detroit',
+    'boston'
+  ]
 
   # simple session authorization
   checkAuth = (req, res, next) ->
@@ -20,20 +34,18 @@ module.exports = (app) ->
   app.all '/:controller', (req, res, next) ->
     routeMvc(req.params.controller, 'index', req, res, next)
 
+  for city in cities
+    do (city) ->
+      app.post "/max/#{city}", (req, res, next) ->
+        socket.callCity city
+        res.statusCode = 200
+        res.type 'application/json'
+        res.json sent: city
+
   app.all '/*', (req, res) ->
     console.warn "error 404: ", req.url
     res.statusCode = 404
     res.render '404', 404
-
-  ###
-
-  app.all '/:controller/:method', (req, res, next) ->
-    routeMvc(req.params.controller, req.params.method, req, res, next)
-
-  app.all '/:controller/:method/:id', (req, res, next) ->
-    routeMvc(req.params.controller, req.params.method, req, res, next)
-
-  ###
 
 # render the page based on controller name, method and id
 routeMvc = (controllerName, methodName, req, res, next) ->
