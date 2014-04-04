@@ -17,6 +17,7 @@ window.onload = () ->
 
   @time = new Time query
   param = if query.city then query.city else ''
-  @city = _.findWhere allCities, placeId: param
+  c = _.findWhere allCities, placeId: param
+  @city = if c then c else _.findWhere allCities, placeId: 'annarbor'
   triggerUpdate()
   setInterval triggerUpdate, 1000
