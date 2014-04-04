@@ -14,7 +14,7 @@ module.exports = (app) ->
     'athens',
     'portland',
     'london',
-    'fredrikstan',
+    'fredrikstad',
     'belfast',
     'detroit',
     'boston'
