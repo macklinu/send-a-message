@@ -9,12 +9,13 @@ window.Time = class Time
     c = if c then c else _.findWhere allCities, placeId: 'annarbor'
 
   update: ->
-    c = @city
-    console.log @city
-    console.log c
     t = moment()
-      .tz c.timezone
-    now = if t.second() % 2 is 0 then t.format('h:mm') else t.format('h mm')
-    console.log now
-    $ "##{c.placeId}-time"
-      .text "The time in #{c.name} is #{now}."
+      .tz @city.timezone
+    now = if t.second() % 2 is 0 then t.format('h:mm:ss') else t.format('h mm ss')
+    $ "##{@city.placeId}-time"
+      .text "The time in #{@city.name} is #{now}."
+    if @currentMinute isnt t.minute()
+      @currentMinute = t.minute()
+      true
+    else
+      false

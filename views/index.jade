@@ -5,6 +5,11 @@ block append head
 block content
   each city in allCities
     div(id="#{city.placeId}-time", class=(city.placeId === query.city ? 'spotlight' : ''))
+        | Sound will arrive in
+        span(id="#{city.placeId}-span-name")
+        |  at
+        span(id="#{city.placeId}-dest-time")
+        | .
   script(type='text/javascript').
     var query = !{JSON.stringify(query)};
     var allCities = !{JSON.stringify(allCities)};
@@ -19,4 +24,5 @@ block content
   != js('visualization')
   != js('socket-client')
   != js('time')
+  != js('distance')
   != js('app')
