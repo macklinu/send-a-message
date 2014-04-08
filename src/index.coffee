@@ -35,6 +35,7 @@ app.use express.session(
 
 # Set View Engine.
 app.set 'view engine', 'jade'
+app.disable 'view cache'
 
 # [Body parser middleware](http://www.senchalabs.org/connect/middleware-bodyParser.html) parses JSON or XML bodies into `req.body` object
 app.use express.urlencoded()

@@ -3,15 +3,16 @@ block append head
   script(type='text/javascript', src='/socket.io/socket.io.js')
 block content
   .row-fluid
-    h1.span12 Send a Message
+    h1.span6 Send a Message
+  .row-fluid
+    #spotlight.span6
+      each city in allCities
+        if city.placeId === query.city
+          p(id="#{city.placeId}-time").lead
   .row-fluid
     #visualization.span12
   .row-fluid
-    #spotlight.span6.hero-unit
-      each city in allCities
-        if city.placeId === query.city
-          span(id="#{city.placeId}-time")
-    #everything-else.span6
+    #everything-else.span6.hero-unit
       p Your message will arrive in:
         each city in allCities
           unless city.placeId === query.city
@@ -19,6 +20,7 @@ block content
               span(id="#{city.placeId}-span-name")
               |  -
               span(id="#{city.placeId}-dest-time")
+    #scrolling-text.span6.hero-unit
   script(type='text/javascript').
     var query = !{JSON.stringify(query)};
     var allCities = !{JSON.stringify(allCities)};
