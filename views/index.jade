@@ -1,15 +1,22 @@
 extends layout
 block append head
   script(type='text/javascript', src='/socket.io/socket.io.js')
-  != css('app')
 block content
-  each city in allCities
-    div(id="#{city.placeId}-time", class=(city.placeId === query.city ? 'spotlight' : ''))
-        | Sound will arrive in
-        span(id="#{city.placeId}-span-name")
-        |  at
-        span(id="#{city.placeId}-dest-time")
-        | .
+  .row-fluid
+    #visualization.span12
+  .row-fluid
+    #spotlight.span6.hero-unit
+      each city in allCities
+        if city.placeId === query.city
+          span(id="#{city.placeId}-time")
+    #everything-else.span6
+      p Your message will arrive in:
+        each city in allCities
+          unless city.placeId === query.city
+            div(id="#{city.placeId}-time")
+              span(id="#{city.placeId}-span-name")
+              |  -
+              span(id="#{city.placeId}-dest-time")
   script(type='text/javascript').
     var query = !{JSON.stringify(query)};
     var allCities = !{JSON.stringify(allCities)};

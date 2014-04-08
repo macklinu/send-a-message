@@ -1,4 +1,5 @@
-width = 960
+width = $ '#visualization'
+          .width()
 height = 500
 rotate = [0, 0]
 graticule = d3.geo.graticule()
@@ -41,7 +42,7 @@ drag = d3.behavior.drag()
 
       plotCoordinates()
 
-svg = d3.select 'body'
+svg = d3.select '#visualization'
       .append 'svg'
       .attr 'width', width
       .attr 'height', height

@@ -8,7 +8,7 @@ window.onload = () ->
         destTime = moment()
           .tz @city.timezone
           .add 'm', distance
-          .format 'h:mm'
+          .format 'h:mma'
         $ "span##{c.placeId}-span-name"
           .text " #{c.name}"
         $ $ "span##{c.placeId}-dest-time"
