@@ -4,11 +4,13 @@ block append head
   != css('component')
 
 block content
-  .container
-    .main
-        ul.cbp-ig-grid
-          each city in cities
-            +cityBlock(city)
+  .main
+    .row
+      h1.span12 Send a Message
+    .row
+      ul.cbp-ig-grid.span12
+        each city in cities
+          +cityBlock(city)
 
 mixin cityBlock(data)
   li

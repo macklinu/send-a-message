@@ -13,7 +13,7 @@ window.Time = class Time
       .tz @city.timezone
     now = if t.second() % 2 is 0 then t.format('h:mm:ss') else t.format('h mm ss')
     $ "##{@city.placeId}-time"
-      .text "The time in #{@city.name} is #{now}."
+      .html "The time in <b>#{@city.name}</b> is #{now}."
     if @currentMinute isnt t.minute()
       @currentMinute = t.minute()
       true
