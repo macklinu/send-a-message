@@ -21,8 +21,3 @@ window.onload = () ->
   @city = if c then c else _.findWhere allCities, placeId: 'annarbor'
   triggerUpdate()
   setInterval triggerUpdate, 1000
-
-  $.get 'https://dl.dropboxusercontent.com/s/goz2q33kuaaeuhg/send-a-message.txt', (data) ->
-    $holder = $ '#scrolling-text'
-    textArray = data.split '\n\n'
-    $holder.append "<p>#{text}</p>" for text in textArray
